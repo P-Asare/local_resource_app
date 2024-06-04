@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:local_resource_app/homepage.dart';
 
 class LocalAuth {
   static final _auth = LocalAuthentication();
@@ -76,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _navigateToHome() {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (_) => const HomeScreen()));
+        .push(MaterialPageRoute(builder: (_) => const HomePage()));
   }
 
   @override
@@ -118,22 +119,6 @@ class _LoginScreenState extends State<LoginScreen> {
             Text('Current State: $_authorized\n'),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
-      body: const Center(
-        child: Text('Welcome to the Home Screen!'),
       ),
     );
   }
